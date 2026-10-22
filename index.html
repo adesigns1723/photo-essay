@@ -29,8 +29,8 @@ nav{display:flex;gap:32px}
 #themeBtn{background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;padding:0;transition:opacity .2s}
 #themeBtn:hover{opacity:.55}
 .edge{position:fixed;left:0;right:0;z-index:15;pointer-events:none;opacity:0;transition:opacity .5s ease;-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)}
-.edge.top{top:0;height:calc(96px + env(safe-area-inset-top,0px));-webkit-mask-image:linear-gradient(to bottom,#000 25%,transparent);mask-image:linear-gradient(to bottom,#000 25%,transparent)}
-.edge.bottom{bottom:0;height:calc(110px + env(safe-area-inset-bottom,0px));-webkit-mask-image:linear-gradient(to top,#000 25%,transparent);mask-image:linear-gradient(to top,#000 25%,transparent)}
+.edge.top{top:0;height:calc(96px + env(safe-area-inset-top,0px));-webkit-mask-image:linear-gradient(to bottom,#000 10%,transparent);mask-image:linear-gradient(to bottom,#000 10%,transparent)}
+.edge.bottom{bottom:0;height:calc(110px + env(safe-area-inset-bottom,0px));-webkit-mask-image:linear-gradient(to top,#000 10%,transparent);mask-image:linear-gradient(to top,#000 10%,transparent)}
 .edge.on{opacity:1}
 #bar{position:fixed;left:0;top:0;height:2px;width:100%;transform:scaleX(0);transform-origin:left;background:var(--ink);z-index:30}
 @media(max-width:640px){#menuBtn{display:block}nav{position:fixed;inset:0;background:var(--bg);color:var(--ink);mix-blend-mode:normal;flex-direction:column;justify-content:center;align-items:center;gap:28px;font-family:var(--serif);font-size:34px;letter-spacing:0;text-transform:none;display:none}nav.open{display:flex}header.open{mix-blend-mode:normal;color:var(--ink)}header.open #menuBtn,header.open .brand{position:relative;z-index:2}}
