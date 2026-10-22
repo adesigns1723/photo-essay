@@ -115,18 +115,18 @@ footer h3{margin:0 0 12px;font:inherit;color:var(--ink)}footer p{margin:0 0 12px
                asym {a,b,flip}, diptych {a,b}, split {photo, note}
    ============================================================ */
 const ESSAY = {
-  title: "Photo Essay ni Shan",
+  title: "Pistang Pinoy",
   subtitle: "I hate this sub.",
-  photographer: "Bendero, Corazo, Taira, Patricio, Rosales",
+  photographer: "Bendero|Corazo|Patricio|Rabo|Rosales",
   location: "[Location]",
   year: "[Year]",
-  theme: "[Subject or theme]",
-  hero: { src: "", ratio: "16/9", alt: "[Describe the opening photograph]" },
+  theme: "Filipino Fiesta",
+  hero: { src: "1.jpg", ratio: "16/9", alt: "[Describe the opening photograph]" },
   /* Logos shown at the top of the opening screen. Set src to your own file, e.g. "images/lpu-logo.png".
      Leave "" to show a placeholder. Delete a line to remove a logo, or add one more the same way. */
   logos: [
-    { src: "", alt: "Lyceum of the Philippines University logo", label: "LPU logo" },
-    { src: "", alt: "LPU College of Fine Arts and Design logo", label: "CFAD logo" }
+    { src: "lpureal.png", alt: "Lyceum of the Philippines University logo", label: "LPU logo" },
+    { src: "cfadreal.png", alt: "LPU College of Fine Arts and Design logo", label: "CFAD logo" }
   ],
   statement: {
     heading: "The Story",
@@ -139,8 +139,8 @@ const ESSAY = {
   },
   sequence: [
     { type: "chapter", label: "I", title: "[Setting]" },
-    { type: "full", photo: { src: "", ratio: "21/9", alt: "[Establishing wide view]", caption: "[Short caption]", place: "[Place, date]" } },
-    { type: "asym", a: { src: "", ratio: "3/2", alt: "[Landscape detail]", caption: "[Caption]" }, b: { src: "", ratio: "4/5", alt: "[Portrait detail]" } },
+    { type: "full", photo: { src: "1.jpg", ratio: "21/9", alt: "[Establishing wide view]", caption: "[Short caption]", place: "[Place, date]" } },
+    { type: "asym", a: { src: "2.jpg", ratio: "3/2", alt: "[Landscape detail]", caption: "[Caption]" }, b: { src: "", ratio: "4/5", alt: "[Portrait detail]" } },
     { type: "pause", text: "[A single reflective sentence from the essay.]" },
     { type: "chapter", label: "II", title: "[The People]" },
     { type: "portrait", align: "right", photo: { src: "", ratio: "4/5", alt: "[Portrait of subject]", caption: "[Name, place]" } },
