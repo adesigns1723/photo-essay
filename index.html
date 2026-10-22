@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>[Photo Essay Title]: A Photographic Essay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1ede4;--bg2:#e5ddcb;--glow:rgba(255,255,255,.55);--ink:#151412;--mute:#6f6a60;--line:#d8d2c5;--ph1:#cfc8b8;--ph2:#bdb5a3;--ph3:#a79f8d;
+--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+--pad:clamp(20px,4vw,64px);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141311;--bg2:#0c0b0a;--glow:rgba(255,240,210,.06);--ink:#ece7dc;--mute:#9a9486;--line:#2e2b26;--ph1:#26231f;--ph2:#2f2b26;--ph3:#38332d}}
+:root[data-theme="dark"]{--bg:#141311;--bg2:#0c0b0a;--glow:rgba(255,240,210,.06);--ink:#ece7dc;--mute:#9a9486;--line:#2e2b26;--ph1:#26231f;--ph2:#2f2b26;--ph3:#38332d}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));height:auto}
+body{margin:0;background:var(--bg);background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);color:var(--ink);font-family:var(--serif);font-size:clamp(19px,1.5vw,22px);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px;transition:opacity .2s}
+a:hover{opacity:.55}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.label{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:20;padding:calc(18px + env(safe-area-inset-top,0px)) var(--pad) 18px;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+header a{text-decoration:none}
+nav{display:flex;gap:32px}
+#menuBtn{display:none;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;padding:8px 0}
+#bar{position:fixed;left:0;top:0;height:2px;width:100%;transform:scaleX(0);transform-origin:left;background:var(--ink);z-index:30}
+@media(max-width:640px){#menuBtn{display:block}nav{position:fixed;inset:0;background:var(--bg);color:var(--ink);mix-blend-mode:normal;flex-direction:column;justify-content:center;align-items:center;gap:28px;font-family:var(--serif);font-size:34px;letter-spacing:0;text-transform:none;display:none}nav.open{display:flex}header.open{mix-blend-mode:normal;color:var(--ink)}header.open #menuBtn,header.open .brand{position:relative;z-index:2}}
+/* hero */
+.hero{position:relative;height:100vh;height:100svh;min-height:520px;color:#f4efe6;display:flex;flex-direction:column;justify-content:flex-end;padding:var(--pad)}
+.hero .frame{position:absolute;inset:0}
+.hero .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.4) 0%,transparent 28%,transparent 40%,rgba(0,0,0,.65) 100%)}
+.hero h1{position:relative;font-weight:400;font-size:clamp(52px,11vw,170px);line-height:.92;margin:0 0 20px;letter-spacing:-.02em;max-width:12ch}
+.hero p{position:relative;font-style:italic;font-size:clamp(20px,2vw,28px);margin:0 0 28px;max-width:34ch}
+.hero .meta{position:relative;display:flex;justify-content:space-between;gap:16px;color:#e4ddcf}
+.scroll{position:absolute;right:var(--pad);bottom:var(--pad);width:1px;height:56px;background:#f4efe6;opacity:.7}
+/* placeholders / frames */
+.frame{position:relative;width:100%;background:var(--ph1);overflow:hidden}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;text-align:center;padding:16px;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);background:linear-gradient(135deg,var(--ph1),var(--ph3))}
+.ph.t2{background:linear-gradient(200deg,var(--ph2),var(--ph1))}.ph.t3{background:linear-gradient(160deg,var(--ph3),var(--ph2))}
+.hero .ph{background:linear-gradient(160deg,#3a3630,#14120f);color:#9a9486}
+.ph b{font-weight:500;color:var(--ink);opacity:.75}.hero .ph b{color:#cfc8b8}
+/* sections */
+main section{margin:0}
+.reel{overflow:hidden;padding:clamp(56px,9vw,120px) 0 clamp(20px,4vw,56px)}
+.reel .label{display:block;padding:0 var(--pad);margin-bottom:22px}
+.track{display:flex;width:max-content;animation:roll 60s linear infinite}
+.reel:hover .track{animation-play-state:paused}
+.item{flex:none;height:clamp(170px,27vw,360px);margin-right:clamp(12px,1.6vw,22px)}
+@keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none}.reel{overflow-x:auto}}
+.logos{position:absolute;z-index:2;left:var(--pad);top:calc(76px + env(safe-area-inset-top,0px));display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.logos img{display:block;height:clamp(44px,6vw,72px);width:auto;max-width:42vw;object-fit:contain}
+.logo-ph{display:none;place-items:center;min-width:clamp(90px,12vw,150px);height:clamp(44px,6vw,72px);padding:6px 10px;border:1px dashed rgba(244,239,230,.7);background:rgba(244,239,230,.12);color:#f4efe6;font-family:var(--sans);font-size:10px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+.statement{display:grid;grid-template-columns:1fr minmax(0,34em) 1fr;padding:clamp(100px,16vw,220px) var(--pad);background:radial-gradient(ellipse 80% 60% at 50% 0%,var(--glow),transparent 70%)}
+.statement>div{grid-column:2}
+.statement h2,.chapter h2{font-weight:400;font-size:clamp(34px,4.5vw,60px);line-height:1.05;margin:12px 0 32px}
+.statement p{margin:0 0 1.2em}
+.statement dl{display:grid;grid-template-columns:auto 1fr;gap:8px 24px;margin:48px 0 0;padding-top:24px;border-top:1px solid var(--line);font-family:var(--sans);font-size:12px}
+.statement dt{letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}.statement dd{margin:0}
+.row{padding:0 var(--pad);margin-bottom:clamp(80px,13vw,200px)}
+.full{margin-bottom:clamp(80px,13vw,200px)}
+.wide{width:min(100%,1280px);margin-inline:auto}
+.center{width:min(100%,760px);margin-inline:auto}
+.portrait{width:min(100%,440px)}.portrait.right{margin-left:auto;margin-right:6vw}.portrait.left{margin-left:6vw}
+.asym{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--pad);align-items:start}
+.asym>:first-child{grid-column:1/8}.asym>:last-child{grid-column:8/13;margin-top:22vw}
+.asym.flip>:first-child{grid-column:6/13;order:2}.asym.flip>:last-child{grid-column:1/6;order:1}
+.diptych{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,28px);align-items:end}
+.split{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--pad);align-items:end}
+.split figure{grid-column:2/7}.split .note{grid-column:8/12;padding-bottom:4vw}
+.note p{margin:0;font-size:clamp(18px,1.4vw,21px);color:var(--ink)}
+figure{margin:0}
+figcaption{display:flex;gap:14px;align-items:baseline;margin-top:12px;font-family:var(--sans);font-size:12px;line-height:1.5;color:var(--mute)}
+figcaption .n{letter-spacing:.14em;color:var(--ink);flex:none}
+.pause{display:grid;place-items:center;text-align:center;padding:clamp(60px,12vw,180px) var(--pad);margin-bottom:clamp(40px,8vw,120px)}
+.pause p{font-style:italic;font-size:clamp(26px,3.6vw,50px);line-height:1.2;max-width:22ch;margin:0}
+.pause.side{place-items:start;text-align:left;padding-left:calc(var(--pad) + 8vw)}.pause.side p{font-size:clamp(20px,2vw,28px);font-style:normal;max-width:28ch}
+.chapter{padding:clamp(80px,12vw,180px) var(--pad) clamp(40px,6vw,80px);text-align:center;background:radial-gradient(ellipse 70% 80% at 50% 100%,var(--glow),transparent 70%)}
+.chapter h2{margin:16px 0 0;font-style:italic}
+.closing{padding:clamp(100px,16vw,220px) var(--pad);text-align:center;background:radial-gradient(ellipse 80% 70% at 50% 40%,var(--glow),transparent 70%)}
+.closing p.q{font-size:clamp(28px,4vw,56px);line-height:1.15;max-width:20ch;margin:0 auto 48px;font-style:italic}
+.closing .label{display:block;margin:6px 0}
+.closing a{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:inline-block;margin-top:48px}
+footer{border-top:1px solid var(--line);padding:56px var(--pad) 40px;display:grid;grid-template-columns:repeat(12,1fr);gap:32px;font-family:var(--sans);font-size:13px;color:var(--mute)}
+footer>:nth-child(1){grid-column:1/5}footer>:nth-child(2){grid-column:6/10;line-height:1.7}footer>:nth-child(3){grid-column:10/13}
+footer h3{margin:0 0 12px;font:inherit;color:var(--ink)}footer p{margin:0 0 12px}footer ul{list-style:none;padding:0;margin:0}footer li{margin-bottom:6px}
+.copy{grid-column:1/-1;font-size:11px;letter-spacing:.1em}
+/* reveal */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+.noanim .rv{opacity:1;transform:none;transition:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
+/* tablet / mobile */
+@media(max-width:900px){.split figure{grid-column:1/8}.split .note{grid-column:8/13}.asym>:last-child{margin-top:12vw}footer>:nth-child(n){grid-column:1/-1}}
+@media(max-width:640px){
+.asym,.split{display:block}.asym>*{margin:0 0 56px!important}.asym>:last-child{width:72%;margin-left:auto!important}.asym.flip>:last-child{margin-left:0!important;margin-right:auto}
+.split .note{margin-top:28px}.diptych{grid-template-columns:1fr 1fr;gap:10px}
+.portrait,.portrait.right,.portrait.left{width:78%}.portrait.right{margin-left:auto;margin-right:0}.portrait.left{margin-left:0}
+.statement{display:block}.hero .meta{flex-direction:column;gap:4px}.pause.side{padding-left:var(--pad)}}
+</style>
+</head>
+<body>
+<div id="bar" aria-hidden="true"></div>
+<header id="top">
+  <a class="brand" href="#hero" id="brand"></a>
+  <button id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Primary"><a href="#essay">Essay</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</header>
+<main id="main"></main>
+<footer id="contact"></footer>
+
+<script>
+/* ============================================================
+   EDIT HERE. Everything on the page is generated from ESSAY.
+   - Set `src` on any photo to a file path or URL (leave "" for a placeholder).
+   - `ratio` is width/height of the original (e.g. "3/2", "4/5") so nothing is cropped or shifts.
+   - Reorder, add or delete items in `sequence` to re-edit the story.
+   Item types: chapter, pause, full, wide, center, portrait (align:"left|right"),
+               asym {a,b,flip}, diptych {a,b}, split {photo, note}
+   ============================================================ */
+const ESSAY = {
+  title: "Pistang Pinoy",
+  subtitle: "I hate this sub.",
+  photographer: "Bendero|Corazo|Patricio|Rabo|Rosales",
+  location: "Imus, Cavite",
+  year: "2026",
+  theme: "Filipino Fiesta",
+  hero: { src: "1.jpg", ratio: "16/9", alt: "[Describe the opening photograph]" },
+  /* Logos shown at the top of the opening screen. Set src to your own file, e.g. "images/lpu-logo.png".
+     Leave "" to show a placeholder. Delete a line to remove a logo, or add one more the same way. */
+  logos: [
+    { src: "lpureal.png", alt: "Lyceum of the Philippines University logo", label: "LPU logo" },
+    { src: "cfadreal.png", alt: "LPU College of Fine Arts and Design logo", label: "CFAD logo" }
+  ],
+  /* Rolling preview strip before the story (moves right to left).
+     It shows 10 pictures. Leave src "" to reuse the matching essay photo automatically
+     (1 = hero, 2-10 = photos in order), or set your own src, alt and ratio (e.g. "3/2", "4/5").
+     previewSpeed is seconds per full loop: bigger = slower. Delete all entries to hide the strip. */
+  previewSpeed: 60,
+  preview: [
+    { src: "", alt: "Preview 1" },
+    { src: "", alt: "Preview 2" },
+    { src: "", alt: "Preview 3" },
+    { src: "", alt: "Preview 4" },
+    { src: "", alt: "Preview 5" },
+    { src: "", alt: "Preview 6" },
+    { src: "", alt: "Preview 7" },
+    { src: "", alt: "Preview 8" },
+    { src: "", alt: "Preview 9" },
+    { src: "", alt: "Preview 10" }
+  ],
+  statement: {
+    heading: "The Story",
+    paragraphs: [
+      "[Placeholder. Say what first brought you here, and what you were looking for. Keep it specific: a street, a name, a season.]",
+      "[Placeholder. Describe how you worked: how long you stayed, what you carried, what you chose not to photograph.]",
+      "[Placeholder. End with what you hope a viewer will notice if they slow down.]"
+    ],
+    meta: { Location: "[Location]", Date: "[Month Year]", Medium: "[Camera / film / process]" }
+  },
+  sequence: [
+    { type: "chapter", label: "I", title: "[Setting]" },
+    { type: "full", photo: { src: "2.jpg", ratio: "21/9", alt: "[Establishing wide view]", caption: "[Short caption]", place: "[Place, date]" } },
+    { type: "asym", a: { src: "10_ROSALES.jpg", ratio: "3/2", alt: "[Landscape detail]", caption: "[Caption]" }, b: { src: "", ratio: "4/5", alt: "[Portrait detail]" } },
+    { type: "pause", text: "[A single reflective sentence from the essay.]" },
+    { type: "chapter", label: "II", title: "[The People]" },
+    { type: "portrait", align: "right", photo: { src: "", ratio: "4/5", alt: "[Portrait of subject]", caption: "[Name, place]" } },
+    { type: "diptych", a: { src: "", ratio: "4/5", alt: "[Hands / detail]" }, b: { src: "", ratio: "4/5", alt: "[Paired detail]", caption: "[Caption for the pair]" } },
+    { type: "pause", side: true, text: "[A short paragraph aligned to one side. A memory, a date, or a line of dialogue.]" },
+    { type: "chapter", label: "III", title: "[What Remains]" },
+    { type: "asym", flip: true, a: { src: "", ratio: "4/5", alt: "[Quiet portrait]" }, b: { src: "", ratio: "3/2", alt: "[Landscape, late light]", caption: "[Caption]" } },
+    { type: "full", photo: { src: "", ratio: "16/9", alt: "[Final photograph]", caption: "[Closing image caption]" } }
+  ],
+  closing: {
+    text: "[A closing reflection. Give resolution, not explanation.]",
+    next: { label: "More work", href: "#" }
+  },
+  about: {
+    bio: "[Placeholder biography: where you are based, what you photograph, where your work has appeared.]",
+    links: [{ label: "Instagram", href: "#" }, { label: "Behance", href: "#" }, { label: "Portfolio", href: "#" }],
+    email: "hello@example.com"
+  }
+};
+
+/* ---------------- renderer ---------------- */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let n = 0;
+
+function fig(p, { eager = false, num = true } = {}) {
+  const k = num ? String(++n).padStart(2, "0") : "";
+  const frame = p.src
+    ? `<img src="${esc(p.src)}" alt="${esc(p.alt)}" ${eager ? "" : 'loading="lazy"'} decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',innerHTML:'<b>Image not found</b>${esc(p.src)}'}))">`
+    : `<div class="ph t${(n % 3) + 1}" role="img" aria-label="Placeholder: ${esc(p.alt)}"><b>Placeholder photo ${k}</b><span>${esc(p.ratio.replace("/", ":"))}</span><span>Set src in ESSAY</span></div>`;
+  const cap = (p.caption || p.place || num)
+    ? `<figcaption>${num ? `<span class="n">${k}</span>` : ""}<span>${esc(p.caption || "")}${p.caption && p.place ? " · " : ""}${esc(p.place || "")}</span></figcaption>` : "";
+  return `<figure class="rv"><div class="frame" style="aspect-ratio:${esc(p.ratio)}">${frame}</div>${p.caption || p.place ? cap : ""}</figure>`;
+}
+
+const layouts = {
+  chapter: i => `<section class="chapter rv"><span class="label">Chapter ${esc(i.label)}</span><h2>${esc(i.title)}</h2></section>`,
+  pause: i => `<section class="pause ${i.side ? "side" : ""} rv"><p>${esc(i.text)}</p></section>`,
+  full: i => `<section class="full">${fig(i.photo)}</section>`,
+  wide: i => `<section class="row"><div class="wide">${fig(i.photo)}</div></section>`,
+  center: i => `<section class="row"><div class="center">${fig(i.photo)}</div></section>`,
+  portrait: i => `<section class="row"><div class="portrait ${i.align || ""}">${fig(i.photo)}</div></section>`,
+  asym: i => `<section class="row"><div class="wide asym ${i.flip ? "flip" : ""}">${fig(i.a)}${fig(i.b)}</div></section>`,
+  diptych: i => `<section class="row"><div class="wide diptych">${fig(i.a)}${fig(i.b)}</div></section>`,
+  split: i => `<section class="row"><div class="wide split">${fig(i.photo)}<div class="note rv"><p>${esc(i.note)}</p></div></div></section>`
+};
+
+function build() {
+  const E = ESSAY;
+  document.title = `${E.title} | ${E.photographer}`;
+  $("#brand").textContent = E.photographer;
+  const heroFrame = E.hero.src
+    ? `<img src="${esc(E.hero.src)}" alt="${esc(E.hero.alt)}" fetchpriority="high">`
+    : `<div class="ph" role="img" aria-label="Placeholder: ${esc(E.hero.alt)}"><b>Placeholder hero photograph</b><span>Set ESSAY.hero.src</span></div>`;
+  const logos = (E.logos || []).map(l => l.src
+    ? `<img src="${esc(l.src)}" alt="${esc(l.alt)}" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-ph',textContent:'Logo not found'}))">`
+    : `<span class="logo-ph" role="img" aria-label="Placeholder: ${esc(l.alt)}">${esc(l.label || 'Logo')}</span>`).join("");
+  const pool = [E.hero];
+  E.sequence.forEach(i => ["photo", "a", "b"].forEach(k => i[k] && pool.push(i[k])));
+  const items = (E.preview || []).map((p, k) => { const s = pool[k] || {}; return { src: p.src || s.src || "", alt: p.alt || s.alt || "", ratio: p.ratio || s.ratio || "3/2" }; });
+  const card = (p, k, hid) => `<div class="item" style="aspect-ratio:${esc(p.ratio)}"${hid ? ' aria-hidden="true"' : ""}><div class="frame" style="height:100%">${p.src ? `<img src="${esc(p.src)}" alt="${hid ? "" : esc(p.alt)}" loading="lazy" decoding="async">` : `<div class="ph t${(k % 3) + 1}"><b>Preview ${k + 1}</b><span>Set src in ESSAY.preview</span></div>`}</div></div>`;
+  const reel = items.length ? `<section class="reel" aria-label="Preview of the photographs"><span class="label">Preview · ${items.length} photographs</span><div class="track" style="animation-duration:${+E.previewSpeed || 60}s">${items.map((p, k) => card(p, k)).join("")}${items.map((p, k) => card(p, k, true)).join("")}</div></section>` : "";
+  const st = E.statement;
+  const html = `
+  <section class="hero" id="hero">
+    <div class="frame" style="height:100%">${heroFrame}</div>
+    ${logos ? `<div class="logos">${logos}</div>` : ""}
+    <h1>${esc(E.title)}</h1>
+    <p>${esc(E.subtitle)}</p>
+    <div class="meta label" style="color:#e4ddcf"><span>${esc(E.photographer)}</span><span>${esc(E.location)}, ${esc(E.year)}</span></div>
+    <span class="scroll" aria-hidden="true"></span>
+  </section>
+  ${reel}
+  <section class="statement" id="about-essay"><div class="rv">
+    <span class="label">${esc(E.theme)}</span>
+    <h2>${esc(st.heading)}</h2>
+    ${st.paragraphs.map(p => `<p>${esc(p)}</p>`).join("")}
+    <dl>${Object.entries(st.meta).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
+  </div></section>
+  <div id="essay">${E.sequence.map(i => (layouts[i.type] || (() => ""))(i)).join("")}</div>
+  <section class="closing rv">
+    <p class="q">${esc(E.closing.text)}</p>
+    <span class="label">${esc(E.photographer)}</span>
+    <span class="label">${esc(E.title)}, ${esc(E.year)}</span>
+    <a href="${esc(E.closing.next.href)}">${esc(E.closing.next.label)} →</a>
+  </section>`;
+  $("#main").innerHTML = html;
+  const A = E.about;
+  $("footer").innerHTML = `
+    <div id="about"><h3>${esc(E.photographer)}</h3><p>${esc(A.bio)}</p></div>
+    <ul>${A.links.map(l => `<li><a href="${esc(l.href)}" rel="noopener">${esc(l.label)}</a></li>`).join("")}</ul>
+    <div><h3>Contact</h3><p><a href="mailto:${esc(A.email)}">${esc(A.email)}</a></p></div>
+    <p class="copy">© ${esc(E.year)} ${esc(E.photographer)}. All photographs and text reserved.</p>`;
+}
+build();
+
+/* reveal on scroll */
+const els = document.querySelectorAll(".rv");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px", threshold: .05 });
+  els.forEach(el => io.observe(el));
+} else document.documentElement.classList.add("noanim");
+
+/* progress */
+const bar = $("#bar");
+const prog = () => { const h = document.documentElement.scrollHeight - innerHeight; bar.style.transform = `scaleX(${h > 0 ? Math.min(1, scrollY / h) : 0})`; };
+addEventListener("scroll", prog, { passive: true }); addEventListener("resize", prog); prog();
+
+/* mobile menu */
+const btn = $("#menuBtn"), nav = $("#nav"), head = $("#top");
+const setMenu = o => { nav.classList.toggle("open", o); head.classList.toggle("open", o); btn.setAttribute("aria-expanded", o); btn.textContent = o ? "Close" : "Menu"; document.body.style.overflow = o ? "hidden" : ""; };
+btn.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+nav.addEventListener("click", e => { if (e.target.tagName === "A") setMenu(false); });
+addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+</script>
+</body>
+</html>
