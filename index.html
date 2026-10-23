@@ -38,7 +38,7 @@ nav{display:flex;gap:32px}
 .hero{position:relative;height:100vh;height:100svh;min-height:520px;color:#f4efe6;display:flex;flex-direction:column;justify-content:flex-end;padding:var(--pad)}
 .hero .frame{position:absolute;inset:0}
 .hero .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.4) 0%,transparent 28%,transparent 40%,rgba(0,0,0,.65) 100%)}
-.hero h1{position:relative;font-weight:400;font-size:clamp(44px,9vw,140px);line-height:.92;margin:0 0 20px;letter-spacing:-.02em;max-width:12ch}
+.hero h1{position:relative;font-weight:400;font-size:clamp(44px,9vw,140px);line-height:.92;margin:0 0 20px;letter-spacing:-.02em;max-width:none;white-space:pre}
 .hero p{position:relative;font-style:italic;font-size:clamp(22px,2.4vw,32px);margin:0 0 28px;max-width:34ch}
 .hero .meta{position:relative;display:flex;justify-content:space-between;gap:16px;color:#e4ddcf}
 .scroll{position:absolute;right:var(--pad);bottom:var(--pad);width:1px;height:56px;background:#f4efe6;opacity:.7}
@@ -88,7 +88,7 @@ figcaption .n{letter-spacing:.14em;color:var(--ink);flex:none}
 .chapter{padding:clamp(56px,8vw,120px) var(--pad) clamp(28px,4vw,56px);text-align:center;background:radial-gradient(ellipse 70% 80% at 50% 100%,var(--glow),transparent 70%)}
 .chapter h2{margin:16px 0 0;font-style:italic}
 .closing{padding:clamp(64px,10vw,150px) var(--pad);text-align:center;background:radial-gradient(ellipse 80% 70% at 50% 40%,var(--glow),transparent 70%)}
-.closing p.q{white-space:pre-line;font-size:clamp(32px,4.5vw,62px);line-height:1.15;max-width:20ch;margin:0 auto 48px;font-style:italic}
+.closing p.q{white-space:pre-line;font-size:clamp(32px,4.5vw,62px);line-height:1.15;max-width:36ch;margin:0 auto 48px;font-style:italic}
 .closing .label{display:block;margin:6px 0}
 .closing a{font-family:var(--sans);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;display:inline-block;margin-top:48px}
 footer{border-top:1px solid var(--line);padding:56px var(--pad) 40px;display:grid;grid-template-columns:repeat(12,1fr);gap:32px;font-family:var(--sans);font-size:15px;color:var(--mute)}
@@ -136,7 +136,7 @@ figure.rv.in .frame img,figure.rv.in .frame .ph{transform:none}
                asym {a,b,flip}, diptych {a,b}, split {photo, note}
    ============================================================ */
 const ESSAY = {
-  title: "Ang Debosyong Hindi Nakaukit sa Bato:",
+  title: "Ang Debosyong\nHindi Nakaukit sa Bato:",
   subtitle: "Fiesta Del Pilar 2026.",
   photographer: "Bendero|Corazo|Patricio|Rabo|Rosales",
   location: "Imus, Cavite",
